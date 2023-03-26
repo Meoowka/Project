@@ -1,0 +1,48 @@
+﻿@page
+@model Programm_L.Pages.Lib.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<form>
+    <p>
+        Title: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Library_l[0].Name_lib)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Library_l[0].Code_lib)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Library_l) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name_lib)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code_lib)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Lib_ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Lib_ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Lib_ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

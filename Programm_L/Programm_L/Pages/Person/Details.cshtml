@@ -1,0 +1,37 @@
+﻿@page
+@model Programm_L.Pages.Person.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Personal</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Personal.Name_pers)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Personal.Name_pers)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Personal.Staj_pers)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Personal.Staj_pers)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Personal.Data_post)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Personal.Data_post)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Personal?.Personal_ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

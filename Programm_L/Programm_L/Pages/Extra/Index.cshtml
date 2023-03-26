@@ -1,0 +1,49 @@
+﻿@page
+@model Programm_L.Pages.Extra.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Extradition[0].personal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Extradition[0].Books)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Extradition[0].Data_extra)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Extradition) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.personal.Personal_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Books.Book_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data_extra)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Extra_ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Extra_ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Extra_ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

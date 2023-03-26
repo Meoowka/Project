@@ -1,0 +1,45 @@
+﻿@page
+@model Programm_L.Pages.Extra.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Extradition</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Extradition.Extra_ID" />
+            <div class="form-group">
+                <label asp-for="Extradition.Personal_ID" class="control-label"></label>
+                <select asp-for="Extradition.Personal_ID" class="form-control" asp-items="ViewBag.Personal_ID"></select>
+                <span asp-validation-for="Extradition.Personal_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Extradition.Book_ID" class="control-label"></label>
+                <select asp-for="Extradition.Book_ID" class="form-control" asp-items="ViewBag.Book_ID"></select>
+                <span asp-validation-for="Extradition.Book_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Extradition.Data_extra" class="control-label"></label>
+                <input asp-for="Extradition.Data_extra" class="form-control" />
+                <span asp-validation-for="Extradition.Data_extra" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
