@@ -1,0 +1,30 @@
+﻿@model Library_p.Models.Library
+
+@{
+    ViewData["Title"] = "Новая Библиотека";
+}
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Create" asp-controller="Home">
+    <div>
+        <div class="form-group">
+            <label asp-for="Name_Lib"></label>
+            <input type="text" asp-for="Name_Lib" class="form-control form-control-sm" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Adress_Lib"></label>
+            <input asp-for="Adress_Lib" class="form-control  form-control-sm" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Department_lib"></label>
+            <input asp-for="Department_lib" class="form-control  form-control-sm" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Сохранить" class="btn btn-outline-secondary" />
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-controller="Home" asp-action="Index">Вернуться к списку</a>
+</div>
